@@ -1,0 +1,114 @@
+h1 {
+  color: #121B28;
+  font-family: 'Ubuntu',helvetica,trebuchet ms,serif;
+  font-size: 34pt;
+  margin-bottom: 12px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+div#first.slide, div#middle.slide {
+  display: table;
+}
+
+.vertical {
+  vertical-align: middle;
+  display: table-cell;
+  height: 50px;
+}
+
+div.slide {
+  background-color: white;
+  -moz-background-clip: padding;
+  -moz-border-radius-bottomleft: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -moz-border-radius-topleft: 20px;
+  -moz-border-radius-topright: 20px;
+  height: 700px;
+  padding: 20px;
+  position: relative;
+  width: 1000px;
+}
+
+div.footer {
+  bottom: 20px;
+  color: #404040;
+  font-family: arial;
+  font-size: 26px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+input#relogio {
+  font-size: 20px;
+}
+
+h1#prelogo {
+  left: 50%;
+  margin-left: -368px;
+  overflow: hidden;
+  position: absolute;
+  /*top: 150px;*/
+  width: 735px;
+  vertical-align: baseline;
+}
+
+h1#logo {
+  height: 100px;
+  left: 50%;
+  line-height: 830px;
+  margin-left: -368px;
+  overflow: hidden;
+  position: absolute;
+  top: 180px;
+  width: 735px;
+  vertical-align: baseline;
+}
+
+ul {
+  padding: 60px;
+}
+
+ul li {
+  color: #121B28;
+  font-family: helvetica, calibri, arial, sans-serif;
+  font-size: 22pt;
+  font-weight: normal;
+  line-height: 30pt;
+  list-style-type: disc;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+div#mouse_over {
+  width: 400px;
+  height: 200px;
+  border-size: 2px;
+  border-style: solid;
+  border-color: #000;
+}
+
+p {
+ color:red;
+ margin:5px;
+ cursor:pointer;
+}
+
+p.hilite {
+ background:yellow;
+}
+
+#draggable { width: 150px; height: 150px; padding: 0.5em; background-color: red; font-weight: bold; text-color: white; }
+
+
+.toggler { width: 500px; height: 200px; position: relative; }
+#button { padding: .5em 1em; text-decoration: none; }
+#effect { width: 240px; height: 135px; padding: 0.4em; position: relative; background: #fff; }
+#effect h3 { margin: 0; padding: 0.4em; text-align: center; }
+
+#progressbar { margin-top: 50px; }
+
+#ui-datepicker-div { visibility: hidden; }

@@ -1,0 +1,277 @@
+<html>
+  <head>
+    <title>Utilização - jQuery</title>
+    <link href="reset.css" rel="stylesheet" type="text/css" />
+    <link href="layout.css" rel="stylesheet" type="text/css" />
+    <link href="jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="formly/formly.css" rel="stylesheet" type="text/css" />
+    <script src="LAB.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function moveRelogio(){
+          momentoAtual = new Date();
+          hora = momentoAtual.getHours();
+          minuto = momentoAtual.getMinutes();
+          segundo = momentoAtual.getSeconds();
+
+          horaImprimivel = hora + " : " + minuto + " : " + segundo;
+
+          document.form_relogio.relogio.value = horaImprimivel;
+
+          setTimeout("moveRelogio()",1000);
+        }
+
+        $LAB
+         .script("jquery.min.js").wait()
+         .script("jquery-ui.min.js").wait()
+         .script("fathom/fathom.min.js")
+         .script("formly/formly.js").wait(function() {
+          function manipulaProgressBar() {
+            $("#progressbar").progressbar({
+                value: (value > 100)? value + 1 : 0
+            });
+
+            setTimeout("manipulaProgressBar()",1000);
+          }
+
+	$(document).ready(function(){
+            $("#utilizacao-de-jquery").fathom();
+
+            moveRelogio();
+
+            //create the div
+            //var div = $("<div id='following_text'></div>").css("position", "absolute").text("CURSOR FOLLOW TEXT").appendTo("body");
+
+            //attach the mousemove event
+            $("#mouse_over").mousemove(function(evt) {
+              $("<div id='following_text'></div>").css("position", "absolute").text("CURSOR FOLLOW TEXT").appendTo("body");
+              $("#following_text").css({
+                 "visibility": "visible",
+                 "left": evt.pageX + "px",
+                 "top": evt.pageY + "px"
+              });
+            }).mouseout(function(evt) {
+              $('#following_text').css("visibility", "hidden");
+            });
+
+            $("#hover_link").hover(function(evt) {
+               $(this).find('img').attr('src', 'fundo_azul_com_branco.jpg');
+            }, function(evt) {
+               $(this).find('img').attr('src', 'fundo_azul.jpg');
+            });
+
+            var busy = false;
+
+            $("#click_link").click(function() {
+               $(this).find('img').attr('src', 'fundo_azul_com_branco.jpg');
+            //}, function() {
+               $(this).find('img').attr('src', 'fundo_azul_com_branco.jpg');
+            });
+
+            $("p").click(function () { 
+               $(this).slideUp(); 
+            });
+
+            $("p").hover(function () {
+               $(this).addClass("hilite");
+            }, function () {
+               $(this).removeClass("hilite");
+            });
+
+            $('#ContactInfo').formly({'theme':'Dark'}, function(e) {
+               $('.callback').html(e);
+            });
+
+            $( "#datepicker" ).datepicker();
+
+            $( "#draggable" ).draggable();
+
+            $( "#button" ).toggle(
+		function() {
+			$( "#effect" ).animate({
+				backgroundColor: "#aa0000",
+				color: "#fff",
+				width: 500
+			}, 1000 );
+		},
+		function() {
+			$( "#effect" ).animate({
+				backgroundColor: "#fff",
+				color: "#000",
+				width: 240
+			}, 1000 );
+	   });
+
+           $( "#progressbar" ).progressbar({
+			value: 37
+	   });
+
+	});
+        });
+    </script>
+  </head>
+  <body>
+    <div id="utilizacao-de-jquery">
+       <div id="first" class="slide">
+          <div class="vertical">
+            <h1 class="prelogo">Utilização</h1>
+            <h1 class="logo"><img src="jquery_logo_color_onwhite.png"/></h1>
+          </div>
+
+          <div class="footer">
+	     Bruno Arueira
+          </div>
+       </div>
+
+       <div class="slide">
+          <h1>Agenda</h1>
+
+          <ul>
+            <li>O que é Javascript?</li>
+            <li>Passado</li>
+            <li>Situação atual</li>
+            <li>Utilização do jQuery</li>
+          </ul>
+       </div>
+
+       <div id="middle" class="slide">
+          <h1 class="vertical">O que é Javascript?</h1>
+       </div>
+
+       <div class="slide">
+          <h1>Passado</h1>
+
+          <form name="form_relogio">
+            <input id="relogio" type="text" name="relogio" size="10">
+          </form>
+
+          <div id="mouse_over">
+             Passe o mouse aqui
+          </div>
+
+          <div id="relogio">
+             <script type="text/javascript" src="relogio_analogico.js"></script>
+          </div>
+
+          <div id="mudar_imagem">
+             <a id="hover_link" href="javascript:void(0)"><img src="fundo_azul.jpg" /></a>
+             <a id="click_link" href="javascript:void(0)"><img src="fundo_azul.jpg" /></a>
+          </div>
+       </div>
+
+       <div class="slide">
+          <h1>Situação atual</h1>
+
+          <ul>
+            <li>Mootools - <a href='http://mootools.net/' target='_new'>http://mootools.net/</a></li>
+            <li>Prototype - <a href='http://www.prototypejs.org/ target='_new'>http://www.prototypejs.org/</a></li>
+            <li>Dojo - <a href='http://www.dojotoolkit.org/' target='_new'>http://www.dojotoolkit.org/</a></li>
+            <li>Sproutcore - <a href='http://www.sproutcore.com/' target='_new'>http://www.sproutcore.com/</a></li>
+            <li>YUI - <a href='http://developer.yahoo.com/yui/' target='_new'>http://developer.yahoo.com/yui/</a></li>
+            <li>EXT - <a href='http://www.sencha.com/products/extjs/' target='_new'>http://www.sencha.com/products/extjs/</a></li>
+            <li>jQuery - <a href='http://jquery.com/' target='_new'>http://jquery.com/</a></li>
+          </ul>
+       </div>
+
+       <div class="slide">
+          <h1>Utilização do jQuery</h1>
+
+          <ul>
+            <li>API do jQuery - <a href='http://api.jquery.com' target='_new'>http://api.jquery.com</a></li>
+            <li>jQuery-UI - <a href='http://jqueryui.com/' target='_new'>http://jqueryui.com/</a></li>
+            <li>Inúmeros plugins</li>
+          </ul>
+       </div>
+
+       <div class="slide">
+          <h1>Utilização do jQuery - API do jQuery</h1>
+
+          <p>First Paragraph</p>
+
+          <p>Second Paragraph</p>
+          <p>Yet one more Paragraph</p>
+
+          <script src="https://gist.github.com/1078442.js?file=jquery_click.js"></script>
+
+       </div>
+
+       <div class="slide">
+          <h1>Utilização do jQuery - jQuery-UI</h1>
+
+          Data: <input id="datepicker" type="text">
+
+          <br />
+
+          <div id="draggable" class="ui-widget-content">
+	     Drag me around
+          </div>
+
+          <br />
+
+          <div class="toggler">
+             <div id="effect" class="ui-widget-content ui-corner-all">
+		<h3 class="ui-widget-header ui-corner-all">Animate</h3>
+
+                Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede. Nulla lorem metus, adipiscing ut, luctus sed, hendrerit vitae, mi.
+             </div>
+          </div>
+
+          <a href="#" id="button" class="ui-state-default ui-corner-all">Toggle Effect</a>
+
+          <br />
+
+          <div id="progressbar"></div>
+       </div>
+
+       <div class="slide">
+          <h1>Utilização do jQuery - Inúmeros plugins</h1>
+
+          <br />
+          <br />
+          <h2>Formly - <a href="http://thrivingkings.com/formly/" target="_new">http://thrivingkings.com/formly/</a></h2>
+          <br />
+
+          <form id="ContactInfo" width="600px" title="Member sign up">
+            <input type="text" name="first_name" place="Your first name" size="30" />
+            <input type="text" name="last_name" place="Your last name" size="30" style="margin-left:10px;" />
+            <input type="text" name="email" validate="email" place="Email address" size="30" />
+            <input type="text" name="website" place="Your website" size="30" pre-fix="http://" validate="http" style="margin-left:10px;" />
+
+            <select id="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+
+            <input type="radio" name="membership" value="new" style="margin-left:10px;" /> New member
+            <input type="radio" name="membership" value="existing" /> Existing member
+
+            <input type="password" name="pword" require="true" label="Password" place="Password" />
+            <input type="password" name="pwordm" match="pword" label="Password" place="Re-type password" />
+
+            <input type="checkbox" name="agree" require="true" label="Terms" value="agree" /> I agree to the terms
+
+            <input type="submit" value="Sign up" /><input type="reset" value="Clear" />
+         </form>
+
+       </div>
+
+       <div class="slide">
+          <h1>Utilização do jQuery - Inúmeros plugins</h1>
+
+          <script src="https://gist.github.com/1078442.js?file=form.html"></script>
+
+          <script src="https://gist.github.com/1078442.js?file=script_formly.js"></script>
+       </div>
+
+       <div class="slide">
+          <h1>Utilização do jQuery - Inúmeros plugins</h1>
+
+          <ul>
+            <li>Picbox - <a href='http://bunnyfire.co.uk/projects/picbox/'>http://bunnyfire.co.uk/projects/picbox/</a></li>
+            <li>Spritely - <a href='http://spritely.net'>http://spritely.net/</a></li>
+            <li>(MB) Extruder - <a href='http://pupunzi.com/mb.components/mb.extruder/demo/demo.html'>http://pupunzi.com/mb.components/mb.extruder/demo/demo.html</a></li>
+            <li>Pines Notify - <a href='http://pines.hg.sourceforge.net/hgweb/pines/pnotify/raw-file/tip/index.html'>http://pines.hg.sourceforge.net/hgweb/pines/pnotify/raw-file/tip/index.html</a></li>
+          </ul>
+       </div>
+    </div>
+  </body>
+</html>
