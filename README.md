@@ -7,8 +7,8 @@ Utilizei algumas coisas básicas do próprio jQuery, jQuery UI e mostrei idéias
 
 Algum dos plugins estão listados abaixo, são eles:
 
-* (Formly)[https://github.com/ThrivingKings/Formly];
-* (Fathom)[https://github.com/markdalgleish/fathom].
+* [Formly](https://github.com/ThrivingKings/Formly);
+* [Fathom](https://github.com/markdalgleish/fathom).
 
 Sendo o formly para estilizar o formulário com temas diversos e possuindo esquema de validação.
 
@@ -25,8 +25,8 @@ I'm utilizing some basic things of the jQuery, jQuery UI and show an ideas how w
 
 Some plugins has been listed below:
 
-* (Formly)[https://github.com/ThrivingKings/Formly];
-* (Fathom)[https://github.com/markdalgleish/fathom].
+* [Formly](https://github.com/ThrivingKings/Formly);
+* [Fathom](https://github.com/markdalgleish/fathom).
 
 formly to stylish forms with many themes and has validation schema.
 
